@@ -32,6 +32,7 @@ exports.getModuleId = function(file) {
      moduleName = moduleName.replace(/^\//, ''); //remove the last trailing '/' from the baseURL
      moduleName =  moduleName.replace(new RegExp(path.extname(rule) + '$', 'g'), ''); // remove any extension the rule have from the moduleName.
      id = parts[0] + moduleName;
+     break;
     }
   }
 
