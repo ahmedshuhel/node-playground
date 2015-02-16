@@ -16,6 +16,12 @@ describe('getModuleId', function() {
     assert.equal(id, 'aurelia-spike/welcome');
   });
 
+  it('it can resolve id from same length paths', function() {
+    var file = 'C:/Users/Shuhel/Workspace/skeleton-navigation/test/welcome.test.js';
+    var id = getModuleId(file);
+    assert.equal(id, 'test/welcome.test');
+  });
+
   it('it can resolve id from local github end point', function() {
     var file = "C:/Users/Shuhel/Workspace/skeleton-navigation/jspm_packages/github/components/jquery@2.1.3/jquery.js"
 
@@ -28,6 +34,6 @@ describe('getModuleId', function() {
     assert.throws(function() {
         getModuleId(file);
       },
-      /No matching rule defined for file:/);
+      /No matching path defined for file:/);
   });
 });
